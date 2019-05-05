@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: @profileActive@
+mybatis:
+  #实体类配置
+  type-aliases-package: com.example.demo.entity
+  mapper-locations: classpath*:sqlmap/*Mapper.xml
+  #驼峰命名规范，如数据库是table_mem,则实体就要写出tableMem
+  configuration:
+    map-underscore-to-camel-case: true
+
+#swagger2配置
+swagger:
+  enable: true
+  title: 'Swagger2 RESTful风格API接口文档'
+  base-package: com.example.demo.controller
+  base-paths: /member.*|/demo.*
+
+

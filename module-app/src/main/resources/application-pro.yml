@@ -1,0 +1,15 @@
+server:
+  port: 2222
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.3.228:3306/dxh_mem?characterEncoding=UTF-8
+    username: dxh
+    password: Dxh2017$$
+
+#swagger2配置
+swagger:
+  #正式环境不开启，默认为true
+  enable: false
+  title: 'Swagger2 RESTful风格API接口文档'

@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.MemberInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.MemberInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="vendorId" property="vendorId" jdbcType="BIGINT" />
+    <result column="memNo" property="memNo" jdbcType="VARCHAR" />
+    <result column="memPin" property="memPin" jdbcType="VARCHAR" />
+    <result column="memPwd" property="memPwd" jdbcType="VARCHAR" />
+    <result column="organCode" property="organCode" jdbcType="VARCHAR" />
+    <result column="organName" property="organName" jdbcType="VARCHAR" />
+    <result column="storeCode" property="storeCode" jdbcType="VARCHAR" />
+    <result column="storeName" property="storeName" jdbcType="VARCHAR" />
+    <result column="wdStoreCode" property="wdStoreCode" jdbcType="VARCHAR" />
+    <result column="memName" property="memName" jdbcType="VARCHAR" />
+    <result column="memHelpCode" property="memHelpCode" jdbcType="VARCHAR" />
+    <result column="nickName" property="nickName" jdbcType="VARCHAR" />
+    <result column="mobileNo" property="mobileNo" jdbcType="VARCHAR" />
+    <result column="balance" property="balance" jdbcType="DOUBLE" />
+    <result column="memPoint" property="memPoint" jdbcType="DOUBLE" />
+    <result column="consumeAmount" property="consumeAmount" jdbcType="DOUBLE" />
+    <result column="allConsumeAmount" property="allConsumeAmount" jdbcType="DOUBLE" />
+    <result column="presentAmount" property="presentAmount" jdbcType="DOUBLE" />
+    <result column="rechargeAmount" property="rechargeAmount" jdbcType="DOUBLE" />
+    <result column="memPointAmount" property="memPointAmount" jdbcType="DOUBLE" />
+    <result column="allRechargeAmount" property="allRechargeAmount" jdbcType="DOUBLE" />
+    <result column="creditLine" property="creditLine" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="needPwdFlag" property="needPwdFlag" jdbcType="TINYINT" />
+    <result column="gender" property="gender" jdbcType="TINYINT" />
+    <result column="memCatCode" property="memCatCode" jdbcType="VARCHAR" />
+    <result column="provinceCode" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="cityCode" property="cityCode" jdbcType="VARCHAR" />
+    <result column="regionCode" property="regionCode" jdbcType="VARCHAR" />
+    <result column="memAddress" property="memAddress" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="headImg" property="headImg" jdbcType="VARCHAR" />
+    <result column="wxAddress" property="wxAddress" jdbcType="VARCHAR" />
+    <result column="df" property="df" jdbcType="TINYINT" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modifyDate" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="parentMemPin" property="parentMemPin" jdbcType="VARCHAR" />
+    <result column="parentMobileNo" property="parentMobileNo" jdbcType="VARCHAR" />
+    <result column="barCodeUrl" property="barCodeUrl" jdbcType="VARCHAR" />
+    <result column="QRCodeUrl" property="QRCodeUrl" jdbcType="VARCHAR" />
+    <result column="QRCodeValue" property="QRCodeValue" jdbcType="VARCHAR" />
+    <result column="cardNo" property="cardNo" jdbcType="VARCHAR" />
+    <result column="cardId" property="cardId" jdbcType="VARCHAR" />
+    <result column="unionid" property="unionid" jdbcType="VARCHAR" />
+    <result column="reference" property="reference" jdbcType="VARCHAR" />
+    <result column="ageGroup" property="ageGroup" jdbcType="VARCHAR" />
+    <result column="memberSource" property="memberSource" jdbcType="TINYINT" />
+    <result column="startDate" property="startDate" jdbcType="TIMESTAMP" />
+    <result column="endDate" property="endDate" jdbcType="TIMESTAMP" />
+    <result column="frozenPoint" property="frozenPoint" jdbcType="DOUBLE" />
+    <result column="payPwd" property="payPwd" jdbcType="VARCHAR" />
+    <result column="frozenPointAmount" property="frozenPointAmount" jdbcType="DOUBLE" />
+    <result column="partnerCode" property="partnerCode" jdbcType="VARCHAR" />
+    <result column="partnerName" property="partnerName" jdbcType="VARCHAR" />
+    <result column="partnerCreate" property="partnerCreate" jdbcType="TIMESTAMP" />
+    <result column="memIDCardNo" property="memIDCardNo" jdbcType="VARCHAR" />
+    <result column="hasOrder" property="hasOrder" jdbcType="TINYINT" />
+    <result column="hasOrderDate" property="hasOrderDate" jdbcType="TIMESTAMP" />
+    <result column="certId" property="certId" jdbcType="VARCHAR" />
+    <result column="customFields1" property="customFields1" jdbcType="VARCHAR" />
+    <result column="customFields2" property="customFields2" jdbcType="VARCHAR" />
+    <result column="customFields3" property="customFields3" jdbcType="VARCHAR" />
+    <result column="customFields4" property="customFields4" jdbcType="VARCHAR" />
+    <result column="customFields5" property="customFields5" jdbcType="VARCHAR" />
+    <result column="shoppingTicket" property="shoppingTicket" jdbcType="TINYINT" />
+    <result column="ticketedDate" property="ticketedDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, vendorId, memNo, memPin, memPwd, organCode, organName, storeCode, storeName, 
+    wdStoreCode, memName, memHelpCode, nickName, mobileNo, balance, memPoint, consumeAmount, 
+    allConsumeAmount, presentAmount, rechargeAmount, memPointAmount, allRechargeAmount, 
+    creditLine, status, needPwdFlag, gender, memCatCode, provinceCode, cityCode, regionCode, 
+    memAddress, birthday, headImg, wxAddress, df, memo, createDate, modifyDate, parentMemPin, 
+    parentMobileNo, barCodeUrl, QRCodeUrl, QRCodeValue, cardNo, cardId, unionid, reference, 
+    ageGroup, memberSource, startDate, endDate, frozenPoint, payPwd, frozenPointAmount, 
+    partnerCode, partnerName, partnerCreate, memIDCardNo, hasOrder, hasOrderDate, certId, 
+    customFields1, customFields2, customFields3, customFields4, customFields5, shoppingTicket, 
+    ticketedDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from memberinfo
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from memberinfo
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.MemberInfo" >
+    insert into memberinfo (id, vendorId, memNo, 
+      memPin, memPwd, organCode, 
+      organName, storeCode, storeName, 
+      wdStoreCode, memName, memHelpCode, 
+      nickName, mobileNo, balance, 
+      memPoint, consumeAmount, allConsumeAmount, 
+      presentAmount, rechargeAmount, memPointAmount, 
+      allRechargeAmount, creditLine, status, 
+      needPwdFlag, gender, memCatCode, 
+      provinceCode, cityCode, regionCode, 
+      memAddress, birthday, headImg, 
+      wxAddress, df, memo, 
+      createDate, modifyDate, parentMemPin, 
+      parentMobileNo, barCodeUrl, QRCodeUrl, 
+      QRCodeValue, cardNo, cardId, 
+      unionid, reference, ageGroup, 
+      memberSource, startDate, endDate, 
+      frozenPoint, payPwd, frozenPointAmount, 
+      partnerCode, partnerName, partnerCreate, 
+      memIDCardNo, hasOrder, hasOrderDate, 
+      certId, customFields1, customFields2, 
+      customFields3, customFields4, customFields5, 
+      shoppingTicket, ticketedDate)
+    values (#{id,jdbcType=BIGINT}, #{vendorId,jdbcType=BIGINT}, #{memNo,jdbcType=VARCHAR}, 
+      #{memPin,jdbcType=VARCHAR}, #{memPwd,jdbcType=VARCHAR}, #{organCode,jdbcType=VARCHAR}, 
+      #{organName,jdbcType=VARCHAR}, #{storeCode,jdbcType=VARCHAR}, #{storeName,jdbcType=VARCHAR}, 
+      #{wdStoreCode,jdbcType=VARCHAR}, #{memName,jdbcType=VARCHAR}, #{memHelpCode,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{mobileNo,jdbcType=VARCHAR}, #{balance,jdbcType=DOUBLE}, 
+      #{memPoint,jdbcType=DOUBLE}, #{consumeAmount,jdbcType=DOUBLE}, #{allConsumeAmount,jdbcType=DOUBLE}, 
+      #{presentAmount,jdbcType=DOUBLE}, #{rechargeAmount,jdbcType=DOUBLE}, #{memPointAmount,jdbcType=DOUBLE}, 
+      #{allRechargeAmount,jdbcType=DOUBLE}, #{creditLine,jdbcType=DOUBLE}, #{status,jdbcType=TINYINT}, 
+      #{needPwdFlag,jdbcType=TINYINT}, #{gender,jdbcType=TINYINT}, #{memCatCode,jdbcType=VARCHAR}, 
+      #{provinceCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, 
+      #{memAddress,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{headImg,jdbcType=VARCHAR}, 
+      #{wxAddress,jdbcType=VARCHAR}, #{df,jdbcType=TINYINT}, #{memo,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyDate,jdbcType=TIMESTAMP}, #{parentMemPin,jdbcType=VARCHAR}, 
+      #{parentMobileNo,jdbcType=VARCHAR}, #{barCodeUrl,jdbcType=VARCHAR}, #{QRCodeUrl,jdbcType=VARCHAR}, 
+      #{QRCodeValue,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR}, 
+      #{unionid,jdbcType=VARCHAR}, #{reference,jdbcType=VARCHAR}, #{ageGroup,jdbcType=VARCHAR}, 
+      #{memberSource,jdbcType=TINYINT}, #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
+      #{frozenPoint,jdbcType=DOUBLE}, #{payPwd,jdbcType=VARCHAR}, #{frozenPointAmount,jdbcType=DOUBLE}, 
+      #{partnerCode,jdbcType=VARCHAR}, #{partnerName,jdbcType=VARCHAR}, #{partnerCreate,jdbcType=TIMESTAMP}, 
+      #{memIDCardNo,jdbcType=VARCHAR}, #{hasOrder,jdbcType=TINYINT}, #{hasOrderDate,jdbcType=TIMESTAMP}, 
+      #{certId,jdbcType=VARCHAR}, #{customFields1,jdbcType=VARCHAR}, #{customFields2,jdbcType=VARCHAR}, 
+      #{customFields3,jdbcType=VARCHAR}, #{customFields4,jdbcType=VARCHAR}, #{customFields5,jdbcType=VARCHAR}, 
+      #{shoppingTicket,jdbcType=TINYINT}, #{ticketedDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.MemberInfo" >
+    insert into memberinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="vendorId != null" >
+        vendorId,
+      </if>
+      <if test="memNo != null" >
+        memNo,
+      </if>
+      <if test="memPin != null" >
+        memPin,
+      </if>
+      <if test="memPwd != null" >
+        memPwd,
+      </if>
+      <if test="organCode != null" >
+        organCode,
+      </if>
+      <if test="organName != null" >
+        organName,
+      </if>
+      <if test="storeCode != null" >
+        storeCode,
+      </if>
+      <if test="storeName != null" >
+        storeName,
+      </if>
+      <if test="wdStoreCode != null" >
+        wdStoreCode,
+      </if>
+      <if test="memName != null" >
+        memName,
+      </if>
+      <if test="memHelpCode != null" >
+        memHelpCode,
+      </if>
+      <if test="nickName != null" >
+        nickName,
+      </if>
+      <if test="mobileNo != null" >
+        mobileNo,
+      </if>
+      <if test="balance != null" >
+        balance,
+      </if>
+      <if test="memPoint != null" >
+        memPoint,
+      </if>
+      <if test="consumeAmount != null" >
+        consumeAmount,
+      </if>
+      <if test="allConsumeAmount != null" >
+        allConsumeAmount,
+      </if>
+      <if test="presentAmount != null" >
+        presentAmount,
+      </if>
+      <if test="rechargeAmount != null" >
+        rechargeAmount,
+      </if>
+      <if test="memPointAmount != null" >
+        memPointAmount,
+      </if>
+      <if test="allRechargeAmount != null" >
+        allRechargeAmount,
+      </if>
+      <if test="creditLine != null" >
+        creditLine,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="needPwdFlag != null" >
+        needPwdFlag,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="memCatCode != null" >
+        memCatCode,
+      </if>
+      <if test="provinceCode != null" >
+        provinceCode,
+      </if>
+      <if test="cityCode != null" >
+        cityCode,
+      </if>
+      <if test="regionCode != null" >
+        regionCode,
+      </if>
+      <if test="memAddress != null" >
+        memAddress,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="headImg != null" >
+        headImg,
+      </if>
+      <if test="wxAddress != null" >
+        wxAddress,
+      </if>
+      <if test="df != null" >
+        df,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="createDate != null" >
+        createDate,
+      </if>
+      <if test="modifyDate != null" >
+        modifyDate,
+      </if>
+      <if test="parentMemPin != null" >
+        parentMemPin,
+      </if>
+      <if test="parentMobileNo != null" >
+        parentMobileNo,
+      </if>
+      <if test="barCodeUrl != null" >
+        barCodeUrl,
+      </if>
+      <if test="QRCodeUrl != null" >
+        QRCodeUrl,
+      </if>
+      <if test="QRCodeValue != null" >
+        QRCodeValue,
+      </if>
+      <if test="cardNo != null" >
+        cardNo,
+      </if>
+      <if test="cardId != null" >
+        cardId,
+      </if>
+      <if test="unionid != null" >
+        unionid,
+      </if>
+      <if test="reference != null" >
+        reference,
+      </if>
+      <if test="ageGroup != null" >
+        ageGroup,
+      </if>
+      <if test="memberSource != null" >
+        memberSource,
+      </if>
+      <if test="startDate != null" >
+        startDate,
+      </if>
+      <if test="endDate != null" >
+        endDate,
+      </if>
+      <if test="frozenPoint != null" >
+        frozenPoint,
+      </if>
+      <if test="payPwd != null" >
+        payPwd,
+      </if>
+      <if test="frozenPointAmount != null" >
+        frozenPointAmount,
+      </if>
+      <if test="partnerCode != null" >
+        partnerCode,
+      </if>
+      <if test="partnerName != null" >
+        partnerName,
+      </if>
+      <if test="partnerCreate != null" >
+        partnerCreate,
+      </if>
+      <if test="memIDCardNo != null" >
+        memIDCardNo,
+      </if>
+      <if test="hasOrder != null" >
+        hasOrder,
+      </if>
+      <if test="hasOrderDate != null" >
+        hasOrderDate,
+      </if>
+      <if test="certId != null" >
+        certId,
+      </if>
+      <if test="customFields1 != null" >
+        customFields1,
+      </if>
+      <if test="customFields2 != null" >
+        customFields2,
+      </if>
+      <if test="customFields3 != null" >
+        customFields3,
+      </if>
+      <if test="customFields4 != null" >
+        customFields4,
+      </if>
+      <if test="customFields5 != null" >
+        customFields5,
+      </if>
+      <if test="shoppingTicket != null" >
+        shoppingTicket,
+      </if>
+      <if test="ticketedDate != null" >
+        ticketedDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="vendorId != null" >
+        #{vendorId,jdbcType=BIGINT},
+      </if>
+      <if test="memNo != null" >
+        #{memNo,jdbcType=VARCHAR},
+      </if>
+      <if test="memPin != null" >
+        #{memPin,jdbcType=VARCHAR},
+      </if>
+      <if test="memPwd != null" >
+        #{memPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="organCode != null" >
+        #{organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organName != null" >
+        #{organName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeCode != null" >
+        #{storeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null" >
+        #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdStoreCode != null" >
+        #{wdStoreCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null" >
+        #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="memHelpCode != null" >
+        #{memHelpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileNo != null" >
+        #{mobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="memPoint != null" >
+        #{memPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="consumeAmount != null" >
+        #{consumeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="allConsumeAmount != null" >
+        #{allConsumeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="presentAmount != null" >
+        #{presentAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="rechargeAmount != null" >
+        #{rechargeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="memPointAmount != null" >
+        #{memPointAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="allRechargeAmount != null" >
+        #{allRechargeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="creditLine != null" >
+        #{creditLine,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="needPwdFlag != null" >
+        #{needPwdFlag,jdbcType=TINYINT},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="memCatCode != null" >
+        #{memCatCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memAddress != null" >
+        #{memAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headImg != null" >
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAddress != null" >
+        #{wxAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="df != null" >
+        #{df,jdbcType=TINYINT},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentMemPin != null" >
+        #{parentMemPin,jdbcType=VARCHAR},
+      </if>
+      <if test="parentMobileNo != null" >
+        #{parentMobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="barCodeUrl != null" >
+        #{barCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="QRCodeUrl != null" >
+        #{QRCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="QRCodeValue != null" >
+        #{QRCodeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNo != null" >
+        #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="reference != null" >
+        #{reference,jdbcType=VARCHAR},
+      </if>
+      <if test="ageGroup != null" >
+        #{ageGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="memberSource != null" >
+        #{memberSource,jdbcType=TINYINT},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="frozenPoint != null" >
+        #{frozenPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="payPwd != null" >
+        #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="frozenPointAmount != null" >
+        #{frozenPointAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="partnerCode != null" >
+        #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerName != null" >
+        #{partnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCreate != null" >
+        #{partnerCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memIDCardNo != null" >
+        #{memIDCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrder != null" >
+        #{hasOrder,jdbcType=TINYINT},
+      </if>
+      <if test="hasOrderDate != null" >
+        #{hasOrderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certId != null" >
+        #{certId,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields1 != null" >
+        #{customFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields2 != null" >
+        #{customFields2,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields3 != null" >
+        #{customFields3,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields4 != null" >
+        #{customFields4,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields5 != null" >
+        #{customFields5,jdbcType=VARCHAR},
+      </if>
+      <if test="shoppingTicket != null" >
+        #{shoppingTicket,jdbcType=TINYINT},
+      </if>
+      <if test="ticketedDate != null" >
+        #{ticketedDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.MemberInfo" >
+    update memberinfo
+    <set >
+      <if test="vendorId != null" >
+        vendorId = #{vendorId,jdbcType=BIGINT},
+      </if>
+      <if test="memNo != null" >
+        memNo = #{memNo,jdbcType=VARCHAR},
+      </if>
+      <if test="memPin != null" >
+        memPin = #{memPin,jdbcType=VARCHAR},
+      </if>
+      <if test="memPwd != null" >
+        memPwd = #{memPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="organCode != null" >
+        organCode = #{organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organName != null" >
+        organName = #{organName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeCode != null" >
+        storeCode = #{storeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null" >
+        storeName = #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdStoreCode != null" >
+        wdStoreCode = #{wdStoreCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null" >
+        memName = #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="memHelpCode != null" >
+        memHelpCode = #{memHelpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nickName = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileNo != null" >
+        mobileNo = #{mobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="memPoint != null" >
+        memPoint = #{memPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="consumeAmount != null" >
+        consumeAmount = #{consumeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="allConsumeAmount != null" >
+        allConsumeAmount = #{allConsumeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="presentAmount != null" >
+        presentAmount = #{presentAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="rechargeAmount != null" >
+        rechargeAmount = #{rechargeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="memPointAmount != null" >
+        memPointAmount = #{memPointAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="allRechargeAmount != null" >
+        allRechargeAmount = #{allRechargeAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="creditLine != null" >
+        creditLine = #{creditLine,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="needPwdFlag != null" >
+        needPwdFlag = #{needPwdFlag,jdbcType=TINYINT},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="memCatCode != null" >
+        memCatCode = #{memCatCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        provinceCode = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        cityCode = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        regionCode = #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memAddress != null" >
+        memAddress = #{memAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headImg != null" >
+        headImg = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAddress != null" >
+        wxAddress = #{wxAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="df != null" >
+        df = #{df,jdbcType=TINYINT},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentMemPin != null" >
+        parentMemPin = #{parentMemPin,jdbcType=VARCHAR},
+      </if>
+      <if test="parentMobileNo != null" >
+        parentMobileNo = #{parentMobileNo,jdbcType=VARCHAR},
+      </if>
+      <if test="barCodeUrl != null" >
+        barCodeUrl = #{barCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="QRCodeUrl != null" >
+        QRCodeUrl = #{QRCodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="QRCodeValue != null" >
+        QRCodeValue = #{QRCodeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNo != null" >
+        cardNo = #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null" >
+        cardId = #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="reference != null" >
+        reference = #{reference,jdbcType=VARCHAR},
+      </if>
+      <if test="ageGroup != null" >
+        ageGroup = #{ageGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="memberSource != null" >
+        memberSource = #{memberSource,jdbcType=TINYINT},
+      </if>
+      <if test="startDate != null" >
+        startDate = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null" >
+        endDate = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="frozenPoint != null" >
+        frozenPoint = #{frozenPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="payPwd != null" >
+        payPwd = #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="frozenPointAmount != null" >
+        frozenPointAmount = #{frozenPointAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="partnerCode != null" >
+        partnerCode = #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerName != null" >
+        partnerName = #{partnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCreate != null" >
+        partnerCreate = #{partnerCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memIDCardNo != null" >
+        memIDCardNo = #{memIDCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrder != null" >
+        hasOrder = #{hasOrder,jdbcType=TINYINT},
+      </if>
+      <if test="hasOrderDate != null" >
+        hasOrderDate = #{hasOrderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certId != null" >
+        certId = #{certId,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields1 != null" >
+        customFields1 = #{customFields1,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields2 != null" >
+        customFields2 = #{customFields2,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields3 != null" >
+        customFields3 = #{customFields3,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields4 != null" >
+        customFields4 = #{customFields4,jdbcType=VARCHAR},
+      </if>
+      <if test="customFields5 != null" >
+        customFields5 = #{customFields5,jdbcType=VARCHAR},
+      </if>
+      <if test="shoppingTicket != null" >
+        shoppingTicket = #{shoppingTicket,jdbcType=TINYINT},
+      </if>
+      <if test="ticketedDate != null" >
+        ticketedDate = #{ticketedDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.MemberInfo" >
+    update memberinfo
+    set vendorId = #{vendorId,jdbcType=BIGINT},
+      memNo = #{memNo,jdbcType=VARCHAR},
+      memPin = #{memPin,jdbcType=VARCHAR},
+      memPwd = #{memPwd,jdbcType=VARCHAR},
+      organCode = #{organCode,jdbcType=VARCHAR},
+      organName = #{organName,jdbcType=VARCHAR},
+      storeCode = #{storeCode,jdbcType=VARCHAR},
+      storeName = #{storeName,jdbcType=VARCHAR},
+      wdStoreCode = #{wdStoreCode,jdbcType=VARCHAR},
+      memName = #{memName,jdbcType=VARCHAR},
+      memHelpCode = #{memHelpCode,jdbcType=VARCHAR},
+      nickName = #{nickName,jdbcType=VARCHAR},
+      mobileNo = #{mobileNo,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=DOUBLE},
+      memPoint = #{memPoint,jdbcType=DOUBLE},
+      consumeAmount = #{consumeAmount,jdbcType=DOUBLE},
+      allConsumeAmount = #{allConsumeAmount,jdbcType=DOUBLE},
+      presentAmount = #{presentAmount,jdbcType=DOUBLE},
+      rechargeAmount = #{rechargeAmount,jdbcType=DOUBLE},
+      memPointAmount = #{memPointAmount,jdbcType=DOUBLE},
+      allRechargeAmount = #{allRechargeAmount,jdbcType=DOUBLE},
+      creditLine = #{creditLine,jdbcType=DOUBLE},
+      status = #{status,jdbcType=TINYINT},
+      needPwdFlag = #{needPwdFlag,jdbcType=TINYINT},
+      gender = #{gender,jdbcType=TINYINT},
+      memCatCode = #{memCatCode,jdbcType=VARCHAR},
+      provinceCode = #{provinceCode,jdbcType=VARCHAR},
+      cityCode = #{cityCode,jdbcType=VARCHAR},
+      regionCode = #{regionCode,jdbcType=VARCHAR},
+      memAddress = #{memAddress,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      headImg = #{headImg,jdbcType=VARCHAR},
+      wxAddress = #{wxAddress,jdbcType=VARCHAR},
+      df = #{df,jdbcType=TINYINT},
+      memo = #{memo,jdbcType=VARCHAR},
+      createDate = #{createDate,jdbcType=TIMESTAMP},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      parentMemPin = #{parentMemPin,jdbcType=VARCHAR},
+      parentMobileNo = #{parentMobileNo,jdbcType=VARCHAR},
+      barCodeUrl = #{barCodeUrl,jdbcType=VARCHAR},
+      QRCodeUrl = #{QRCodeUrl,jdbcType=VARCHAR},
+      QRCodeValue = #{QRCodeValue,jdbcType=VARCHAR},
+      cardNo = #{cardNo,jdbcType=VARCHAR},
+      cardId = #{cardId,jdbcType=VARCHAR},
+      unionid = #{unionid,jdbcType=VARCHAR},
+      reference = #{reference,jdbcType=VARCHAR},
+      ageGroup = #{ageGroup,jdbcType=VARCHAR},
+      memberSource = #{memberSource,jdbcType=TINYINT},
+      startDate = #{startDate,jdbcType=TIMESTAMP},
+      endDate = #{endDate,jdbcType=TIMESTAMP},
+      frozenPoint = #{frozenPoint,jdbcType=DOUBLE},
+      payPwd = #{payPwd,jdbcType=VARCHAR},
+      frozenPointAmount = #{frozenPointAmount,jdbcType=DOUBLE},
+      partnerCode = #{partnerCode,jdbcType=VARCHAR},
+      partnerName = #{partnerName,jdbcType=VARCHAR},
+      partnerCreate = #{partnerCreate,jdbcType=TIMESTAMP},
+      memIDCardNo = #{memIDCardNo,jdbcType=VARCHAR},
+      hasOrder = #{hasOrder,jdbcType=TINYINT},
+      hasOrderDate = #{hasOrderDate,jdbcType=TIMESTAMP},
+      certId = #{certId,jdbcType=VARCHAR},
+      customFields1 = #{customFields1,jdbcType=VARCHAR},
+      customFields2 = #{customFields2,jdbcType=VARCHAR},
+      customFields3 = #{customFields3,jdbcType=VARCHAR},
+      customFields4 = #{customFields4,jdbcType=VARCHAR},
+      customFields5 = #{customFields5,jdbcType=VARCHAR},
+      shoppingTicket = #{shoppingTicket,jdbcType=TINYINT},
+      ticketedDate = #{ticketedDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
